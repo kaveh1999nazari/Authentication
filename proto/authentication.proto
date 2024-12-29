@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package authentication;
+
+option php_namespace = "GRPC\\authentication";
+option php_metadata_namespace = "GRPC\\authentication\\GPBMetadata";
+
+
+service AuthenticationUserGrpc {
+    rpc LoginByMobile (LoginMobileRequest) returns (LoginMobileResponse);
+    rpc LoginByEmail (LoginEmailRequest) returns (LoginEmailResponse);
+}
+
+message LoginMobileRequest {
+    string mobile = 1;
+    string password = 2;
+}
+
+message LoginMobileResponse {
+    string token = 1;
+    repeated string message = 2;
+}
+
+message LoginEmailRequest {
+    string email = 1;
+    string code = 2;
+}
+
+message LoginEmailResponse {
+    string token = 1;
+    repeated string message = 2;
+}
+
