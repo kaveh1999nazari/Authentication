@@ -1,0 +1,1 @@
+[2024-12-29T13:04:29.088524+00:00] ERROR: Spiral\RoadRunnerBridge\GRPC\Exception\CompileException: sh: 1: protoc: not found in /home/kaveh/PhpStorm/Authentication/vendor/spiral/roadrunner-bridge/src/GRPC/CommandExecutor.php at line 23 []
