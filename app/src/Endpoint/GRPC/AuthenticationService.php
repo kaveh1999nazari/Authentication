@@ -4,6 +4,7 @@ namespace App\Endpoint\GRPC;
 
 use App\Domain\Entity\User;
 use Cycle\ORM\ORMInterface;
+use Google\Rpc\Code;
 use GRPC\authentication\AuthenticationUserGrpcInterface;
 use GRPC\authentication\LoginEmailRequest;
 use GRPC\authentication\LoginEmailResponse;
@@ -15,7 +16,9 @@ use Spiral\RoadRunner\GRPC;
 
 class AuthenticationService implements AuthenticationUserGrpcInterface
 {
-    public function __construct(private readonly ORMInterface $orm, private readonly TokenStorageInterface $token)
+    public function __construct(private readonly ORMInterface $orm,
+                                private readonly TokenStorageInterface $token
+    )
     {
     }
 
@@ -61,7 +64,9 @@ class AuthenticationService implements AuthenticationUserGrpcInterface
             $response->setToken($token->getID());
 
         } else {
-            $response->setMessage(["Authentication failed."]);
+            throw new GRPC\Exception\GRPCException(
+                message: 'Authentication failed.',
+                code: Code::CANCELLED);
         }
 
         return $response;
