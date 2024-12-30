@@ -35,4 +35,15 @@ class AuthenticationUserGrpcClient implements AuthenticationUserGrpcInterface
 
         return $response;
     }
+
+    public function logout(ContextInterface $ctx, LogoutRequest $in): LogoutResponse
+    {
+        [$response, $status] = $this->core->callAction(AuthenticationUserGrpcInterface::class, '/'.self::NAME.'/logout', [
+            'in' => $in,
+            'ctx' => $ctx,
+            'responseClass' => \GRPC\authentication\LogoutResponse::class,
+        ]);
+
+        return $response;
+    }
 }
