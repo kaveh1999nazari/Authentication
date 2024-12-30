@@ -78,6 +78,10 @@ class Kernel extends \Spiral\Framework\Kernel
 
             // Fast code prototyping
             PrototypeBootloader::class,
+
+            // Auth
+            \Spiral\Bootloader\Auth\HttpAuthBootloader::class,
+            \Spiral\Cycle\Bootloader\AuthTokensBootloader::class,
         ];
     }
 }
