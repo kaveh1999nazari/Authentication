@@ -75,7 +75,7 @@ return [
         ),
         'mysql' => new Config\MySQLDriverConfig(
             connection: new Config\MySQL\TcpConnectionConfig(
-                database: 'authenticate',
+                database: 'UserManagement',
                 host: '127.0.0.1',
                 port: 3306,
                 user: 'root',
