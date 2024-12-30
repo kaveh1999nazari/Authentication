@@ -10,6 +10,9 @@ use GRPC\authentication\LoginEmailRequest;
 use GRPC\authentication\LoginEmailResponse;
 use GRPC\authentication\LoginMobileRequest;
 use GRPC\authentication\LoginMobileResponse;
+use GRPC\authentication\LogoutRequest;
+use GRPC\authentication\LogoutResponse;
+use Predis\Client;
 use Spiral\Auth\TokenStorageInterface;
 use Spiral\RoadRunner\GRPC;
 
@@ -17,7 +20,7 @@ use Spiral\RoadRunner\GRPC;
 class AuthenticationService implements AuthenticationUserGrpcInterface
 {
     public function __construct(private readonly ORMInterface $orm,
-                                private readonly TokenStorageInterface $token
+                                private readonly TokenStorageInterface $token,
     )
     {
     }
@@ -70,6 +73,40 @@ class AuthenticationService implements AuthenticationUserGrpcInterface
         }
 
         return $response;
+    }
+
+    public function logout(GRPC\ContextInterface $ctx, LogoutRequest $in): LogoutResponse
+    {
+        $token = $this->extractToken($ctx->getValue('authorization'));
+
+//        if ($token === null) {
+//            throw new GRPC\Exception\GRPCException(message: 'Invalid or missing token.',
+//                code: Code::CANCELLED);
+//        }
+//        $loadedToken = $this->token->load($token);
+//
+//        if ($loadedToken === null) {
+//            throw new GRPC\Exception\GRPCException(message: 'Token not found or already invalidated.',
+//                code: Code::NOT_FOUND);
+//        }
+
+
+        $response = new LogoutResponse();
+        $response->setMessage('Successfully logged out.');
+        return $response;
+    }
+
+    // methods
+
+    /**
+     * @param array|null $authHeader
+     * @return string|null
+     */
+    private function extractToken(?array $authHeader): ?string
+    {
+        return (is_array($authHeader) && isset($authHeader[0]) && !empty($authHeader[0]))
+            ? substr($authHeader[0], 7)
+            : null;
     }
 
 }
