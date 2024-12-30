@@ -12,7 +12,6 @@ use GRPC\authentication\LoginMobileRequest;
 use GRPC\authentication\LoginMobileResponse;
 use GRPC\authentication\LogoutRequest;
 use GRPC\authentication\LogoutResponse;
-use Predis\Client;
 use Spiral\Auth\TokenStorageInterface;
 use Spiral\RoadRunner\GRPC;
 
