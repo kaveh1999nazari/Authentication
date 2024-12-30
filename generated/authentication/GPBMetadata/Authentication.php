@@ -16,7 +16,7 @@ class Authentication
         }
         $pool->internalAddGeneratedFile(
             '
-‹
+ˆ
 authentication.protoauthentication"6
 LoginMobileRequest
 mobile (	
@@ -29,10 +29,14 @@ class Authentication
 code (	"4
 LoginEmailResponse
 token (	
-message (	2É
+message (	"
+LogoutRequest"!
+LogoutResponse
+message (	2’
 AuthenticationUserGrpcX
 LoginByMobile".authentication.LoginMobileRequest#.authentication.LoginMobileResponseU
-LoginByEmail!.authentication.LoginEmailRequest".authentication.LoginEmailResponseB8ÊGRPC\\authenticationâGRPC\\authentication\\GPBMetadatabproto3'
+LoginByEmail!.authentication.LoginEmailRequest".authentication.LoginEmailResponseG
+logout.authentication.LogoutRequest.authentication.LogoutResponseB8ÊGRPC\\authenticationâGRPC\\authentication\\GPBMetadatabproto3'
         , true);
 
         static::$is_initialized = true;
