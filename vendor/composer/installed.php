@@ -3,7 +3,7 @@
         'name' => 'spiral/app',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '74b3cc1092516323b5ed978890475a2c3c5924a0',
+        'reference' => '1554ceb12b43629610053cc24c8498a3d5f8b340',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -838,6 +838,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'predis/predis' => array(
+            'pretty_version' => 'v2.3.0',
+            'version' => '2.3.0.0',
+            'reference' => 'bac46bfdb78cd6e9c7926c697012aae740cb9ec9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../predis/predis',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'psalm/psalm' => array(
             'dev_requirement' => true,
             'provided' => array(
@@ -1232,7 +1241,7 @@
         'spiral/app' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '74b3cc1092516323b5ed978890475a2c3c5924a0',
+            'reference' => '1554ceb12b43629610053cc24c8498a3d5f8b340',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

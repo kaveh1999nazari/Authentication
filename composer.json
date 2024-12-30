@@ -16,6 +16,7 @@
         "firebase/php-jwt": "^6.10",
         "grpc/grpc": "^1.42",
         "kreait/firebase-php": "^7.16",
+        "predis/predis": "^2.3",
         "spiral-packages/laravel-validator": "^1.1",
         "spiral/cycle-bridge": "^2.5",
         "spiral/framework": "^3.8",
