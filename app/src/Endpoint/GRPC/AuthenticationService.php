@@ -78,17 +78,18 @@ class AuthenticationService implements AuthenticationUserGrpcInterface
     {
         $token = $this->extractToken($ctx->getValue('authorization'));
 
-//        if ($token === null) {
-//            throw new GRPC\Exception\GRPCException(message: 'Invalid or missing token.',
-//                code: Code::CANCELLED);
-//        }
-//        $loadedToken = $this->token->load($token);
-//
-//        if ($loadedToken === null) {
-//            throw new GRPC\Exception\GRPCException(message: 'Token not found or already invalidated.',
-//                code: Code::NOT_FOUND);
-//        }
+        if ($token === null) {
+            throw new GRPC\Exception\GRPCException(message: 'Invalid or missing token.',
+                code: Code::CANCELLED);
+        }
+        $loadedToken = $this->token->load($token);
 
+        if ($loadedToken === null) {
+            throw new GRPC\Exception\GRPCException(message: 'Token not found or already invalidated.',
+                code: Code::NOT_FOUND);
+        }
+
+        $this->token->delete($loadedToken);
 
         $response = new LogoutResponse();
         $response->setMessage('Successfully logged out.');
