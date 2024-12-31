@@ -30,6 +30,3 @@
     </div>
 </body>
 </html>
-# user-management
-# Authentication
-# Authentication
