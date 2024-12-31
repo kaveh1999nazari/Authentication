@@ -7,6 +7,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Spiral\Auth\TokenInterface;
 use Spiral\Auth\TokenStorageInterface;
+use Cycle\ORM\ORMInterface;
 
 final class JwtTokenStorage implements TokenStorageInterface
 {
@@ -17,7 +18,8 @@ final class JwtTokenStorage implements TokenStorageInterface
         private readonly string $secret,
         private string $algorithm = 'HS256',
         private readonly string $expiresAt = '+30 days',
-        callable $time = null
+        callable $time = null,
+        private readonly ORMInterface $orm
     ) {
         $this->time = $time ?? static function (string $offset): \DateTimeImmutable {
             return new \DateTimeImmutable($offset);
@@ -72,6 +74,14 @@ final class JwtTokenStorage implements TokenStorageInterface
 
     public function delete(TokenInterface $token): void
     {
-        // We don't need to do anything here since JWT tokens are self-contained.
+        $tokenId = $token->getID();
+
+        try {
+            $this->orm->getSource('auth_tokens')
+            ->delete(['token_id' => $tokenId])
+            ->run();
+        } catch (\Throwable $exception) {
+            throw new \RuntimeException("Unable to delete token: {$exception->getMessage()}", 0, $exception);
+        }
     }
 }
