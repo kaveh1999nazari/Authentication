@@ -5,12 +5,8 @@ declare(strict_types=1);
 namespace GRPC\Bootloader;
 
 use GRPC\Config\GRPCServicesConfig;
-use GRPC\authentication\AuthenticationUserGrpcClient as AuthenticationUserGrpcClient1;
-use GRPC\authentication\AuthenticationUserGrpcInterface as AuthenticationUserGrpcInterface1;
-use GRPC\user\AuthenticationUserGrpcClient;
-use GRPC\user\AuthenticationUserGrpcInterface;
-use GRPC\user\UserGrpcClient;
-use GRPC\user\UserGrpcInterface;
+use GRPC\authentication\AuthenticationUserGrpcClient;
+use GRPC\authentication\AuthenticationUserGrpcInterface;
 use Spiral\Boot\Bootloader\Bootloader;
 use Spiral\Boot\EnvironmentInterface;
 use Spiral\Config\ConfiguratorInterface;
