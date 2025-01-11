@@ -86,6 +86,13 @@ class Kernel extends \Spiral\Framework\Kernel
             // JWT-Security
             \Spiral\Bootloader\Auth\HttpAuthBootloader::class,
             \Spiral\Cycle\Bootloader\AuthTokensBootloader::class,
+
+            // validation
+            Framework\Security\EncrypterBootloader::class,
+            Framework\Security\FiltersBootloader::class,
+            Framework\Security\GuardBootloader::class,
+            \Spiral\Validation\Bootloader\ValidationBootloader::class,
+            \Spiral\Validator\Bootloader\ValidatorBootloader::class,
         ];
     }
 }

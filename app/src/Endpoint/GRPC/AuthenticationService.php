@@ -76,6 +76,7 @@ class AuthenticationService implements AuthenticationUserGrpcInterface
 
     public function logout(GRPC\ContextInterface $ctx, LogoutRequest $in): LogoutResponse
     {
+        print_r($ctx);
         $token = $this->extractToken($ctx->getValue('authorization'));
 
         if ($token === null) {

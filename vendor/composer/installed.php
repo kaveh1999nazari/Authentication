@@ -3,7 +3,7 @@
         'name' => 'spiral/app',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4053134b271897f82da6f302a3e1ab56ddf0638c',
+        'reference' => 'ed70fab53c2b10be041041bfba180bfc65fbe8e2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1241,7 +1241,7 @@
         'spiral/app' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4053134b271897f82da6f302a3e1ab56ddf0638c',
+            'reference' => 'ed70fab53c2b10be041041bfba180bfc65fbe8e2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1690,6 +1690,15 @@
             'replaced' => array(
                 0 => '3.14.8',
             ),
+        ),
+        'spiral/validator' => array(
+            'pretty_version' => '1.5.3',
+            'version' => '1.5.3.0',
+            'reference' => '60418876adcb0b167eff003e5b21b00b226a3cd5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spiral/validator',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spiral/views' => array(
             'dev_requirement' => false,

@@ -104,6 +104,7 @@ class ComposerStaticInited1e8d953c14ca2c050ff9e944c174cc
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
             'Spiral\\Views\\' => 13,
+            'Spiral\\Validator\\' => 17,
             'Spiral\\Validation\\Laravel\\' => 26,
             'Spiral\\Validation\\' => 18,
             'Spiral\\Translator\\' => 18,
@@ -325,8 +326,8 @@ class ComposerStaticInited1e8d953c14ca2c050ff9e944c174cc
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Yiisoft\\Injector\\' => 
         array (
@@ -455,6 +456,10 @@ class ComposerStaticInited1e8d953c14ca2c050ff9e944c174cc
         'Spiral\\Views\\' => 
         array (
             0 => __DIR__ . '/..' . '/spiral/framework/src/Views/src',
+        ),
+        'Spiral\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spiral/validator/src',
         ),
         'Spiral\\Validation\\Laravel\\' => 
         array (
@@ -636,8 +641,8 @@ class ComposerStaticInited1e8d953c14ca2c050ff9e944c174cc
         ),
         'Spiral\\Debug\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spiral/framework/src/Debug/src',
-            1 => __DIR__ . '/..' . '/spiral/dumper/src',
+            0 => __DIR__ . '/..' . '/spiral/dumper/src',
+            1 => __DIR__ . '/..' . '/spiral/framework/src/Debug/src',
         ),
         'Spiral\\DataGrid\\' => 
         array (
@@ -745,8 +750,8 @@ class ComposerStaticInited1e8d953c14ca2c050ff9e944c174cc
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -842,9 +847,9 @@ class ComposerStaticInited1e8d953c14ca2c050ff9e944c174cc
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/conditionable',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/conditionable',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Filesystem\\' => 
