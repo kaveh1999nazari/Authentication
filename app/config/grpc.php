@@ -39,4 +39,7 @@ return [
      * Default: null
      */
     'servicesBasePath' => directory('root') . '/proto',
+    'interceptors' => [
+        \App\Endpoint\Interceptor\ValidatorInterceptor::class,
+    ],
 ];

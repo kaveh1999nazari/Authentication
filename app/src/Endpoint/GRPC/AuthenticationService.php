@@ -2,7 +2,9 @@
 
 namespace App\Endpoint\GRPC;
 
+use App\Domain\Attribute\ValidateBy;
 use App\Domain\Entity\User;
+use App\Domain\Request\UserLoginMobileRequest;
 use Cycle\ORM\ORMInterface;
 use Google\Rpc\Code;
 use GRPC\authentication\AuthenticationUserGrpcInterface;
@@ -24,6 +26,7 @@ class AuthenticationService implements AuthenticationUserGrpcInterface
     {
     }
 
+    #[ValidateBy(UserLoginMobileRequest::class)]
     public function LoginByMobile(GRPC\ContextInterface $ctx, LoginMobileRequest $in): LoginMobileResponse
     {
         $user = $this->orm->getRepository(User::class)
@@ -49,6 +52,7 @@ class AuthenticationService implements AuthenticationUserGrpcInterface
 
     }
 
+    #[ValidateBy(LoginEmailRequest::class)]
     public function LoginByEmail(GRPC\ContextInterface $ctx, LoginEmailRequest $in): LoginEmailResponse
     {
         $user = $this->orm->getRepository(User::class)
